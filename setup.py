@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 from setuptools import find_packages
 from setuptools import setup
 
@@ -5,7 +7,7 @@ try:
     from pypandoc import convert
     read_md = lambda f: convert(f, 'rst')
 except ImportError:
-    print "warning: pypandoc module not found, could not convert Markdown to RST"
+    print("warning: pypandoc module not found, could not convert Markdown to RST")
     read_md = lambda f: open(f, 'r').read()
 
 setup(
